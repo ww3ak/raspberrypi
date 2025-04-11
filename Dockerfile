@@ -5,7 +5,7 @@ FROM node:18
 WORKDIR /my-app
 
 # Copy app files
-COPY my-app/package*.json ./
+COPY my-app/ .
 # COPY my-app/tsconfig.json ./
 # COPY my-app/next.config.ts ./
 # COPY my-app/eslint.config.mjs ./

@@ -1,10 +1,26 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
+"use client";
+import React, { useState } from "react";
+import Weather from "./weather"; // this imports from weather.js
 
-export default function Home() {
+function App() {
+  const [iconUrl, setIconUrl] = useState<string | null>(null);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Raspberry Pi</h1>
-    </main>
+    <div className="App">
+      <header className="App-header">
+        {iconUrl && (
+          <img
+            src={`https:${iconUrl}`}
+            alt="Weather Icon"
+            width={300}
+            height={300}
+          />
+        )}
+        <p>Raspberry Pi Web Page Test</p>
+        <Weather onIconUpdate={setIconUrl} />
+      </header>
+    </div>
   );
 }
+
+export default App;
